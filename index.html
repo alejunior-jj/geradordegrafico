@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Criador de Gráfico Kyraly</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-colorschemes"></script>
+
+</head>
+<body>
+  <header>
+    <h1>Criador de Gráfico KYRALY</h1>
+  </header>
+  <main>
+    <section class="instructions-section">
+      <h2>Instruções de uso:</h2>
+      <ol>
+        <li>Selecione um arquivo CSV utilizando o botão "Escolher arquivo". Certifique-se de que o arquivo esteja no formato CSV.</li>
+        <li>Escolha o tipo de gráfico que deseja gerar a partir do seu arquivo CSV.</li>
+        <li>Clique no botão "Enviar" para carregar os dados do arquivo CSV e gerar o gráfico.</li>
+        <li>Após o gráfico ser gerado, você pode clicar no botão "Salvar como imagem ou PDF" para salvar o gráfico em seu dispositivo.</li>
+      </ol>
+    </section>
+    
+
+    <section class="form-section">
+      <form>
+        <label for="csv">Escolher Arquivo:</label>
+        <input type="file" id="csv" name="csv" accept=".csv">
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section class="chart-section">
+      <div class="chart-type">
+        <label for="chartType">Escolha o tipo de gráfico:</label>
+        
+		<div class="chart-type">
+			<label for="chartType">Escolha o tipo de gráfico:</label>
+			<select id="chartType">
+				<option value="bar">Gráfico de Barras</option>
+				<option value="line">Gráfico de Linhas</option>
+				<option value="radar">Gráfico Radar</option>
+				<option value="polarArea">Gráfico Polar</option>
+				<option value="pie">Gráfico de Pizza</option>
+			</select>
+			<label for="fileType">Salvar como:</label>
+			<select id="fileType">
+				<option value="png">PNG</option>
+			</select>
+			<button id="downloadButton">Salvar</button>
+		</div>
+		
+      </div>
+      <div class="chart-container">
+        <canvas id="chart"></canvas>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 - Feito por Ale Junior</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
